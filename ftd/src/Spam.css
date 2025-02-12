@@ -1,0 +1,43 @@
+.spam-detector-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .header {
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .input-area {
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 60%;
+    box-sizing: border-box; /* To prevent width from increasing due to padding */
+  }
+  
+  .detect-button {
+    padding: 10px 15px;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .detect-button:hover{
+    background-color: gray;
+  }
