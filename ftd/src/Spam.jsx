@@ -16,7 +16,7 @@ function Spam() {
         }
         setLoading(true);
         try {
-            const response = await axios.post('http://localhost:4000/detectspam', { text });
+            const response = await axios.post('https://spam-backend-4y1e.onrender.com/detectspam', { text });
             setResult(response.data.result);
             console.log(result)
         } catch (error) {
