@@ -1,18 +1,21 @@
 import joblib
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend communication
 
 # Load the trained model and vectorizer
-model_path = r'C:\Users\chakr\OneDrive\Desktop\spam\ml\model\model.joblib'
-vectorizer_path = r'C:\Users\chakr\OneDrive\Desktop\spam\ml\model\vectorizer.joblib'
+MODEL_PATH = os.path.join(BASE_DIR, "model", "model.joblib")
+VECTORIZER_PATH = os.path.join(BASE_DIR, "model", "vectorizer.joblib")
 
 try:
-    model = joblib.load(model_path)
-    vectorizer = joblib.load(vectorizer_path)
+    model = joblib.load(MODEL_PATH)
+    vectorizer = joblib.load(VECTORIZER_PATH)
     print("Model and Vectorizer loaded successfully!")
 except Exception as e:
     print(f"Error loading model/vectorizer: {e}")
