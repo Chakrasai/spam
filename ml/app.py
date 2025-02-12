@@ -1,20 +1,3 @@
-from flask import Flask, request, jsonify
-import joblib
-
-app = Flask(__name__)
-
-model = joblib.load(r"C:\Users\chakr\OneDrive\Desktop\mern\spam\ml\model\model.joblib")
-
-@app.route("/predict", methods=["POST"])
-def predict():
-    data = request.get_json()
-    text = data["text"]
-    prediction = model.predict([text])[0]
-    return jsonify({"prediction": "spam" if prediction == 1 else "Not Spam"})
-
-if __name__ == "__main__":
-    app.run(port=5001)
-
 import joblib
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -24,8 +7,8 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend communication
 
 # Load the trained model and vectorizer
-model_path = r'C:\Users\chakr\OneDrive\Desktop\mern\spam\ml\model\model.joblib'
-vectorizer_path = r'C:\Users\chakr\OneDrive\Desktop\mern\spam\ml\model\vectorizer.joblib'
+model_path = r'C:\Users\chakr\OneDrive\Desktop\spam\ml\model\model.joblib'
+vectorizer_path = r'C:\Users\chakr\OneDrive\Desktop\spam\ml\model\vectorizer.joblib'
 
 try:
     model = joblib.load(model_path)
@@ -63,4 +46,3 @@ def detect_spam():
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
-
