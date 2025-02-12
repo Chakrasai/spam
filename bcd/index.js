@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); 
 app.use(express.json());
 
-const flaskapi = 'http://localhost:5000/detectspam';
+const flaskapi = 'https://spam-deployment.onrender.com/detectspam';
 
 
 app.post('/detectspam', async (req, res) => {
@@ -33,5 +33,5 @@ app.post('/detectspam', async (req, res) => {
 })
 
 app.listen(4000, () => {
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port 4000');
 });
