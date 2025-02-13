@@ -11,6 +11,10 @@ app.use(express.json());
 const flaskapi = 'https://spam-deployment.onrender.com/detectspam';
 
 
+app.get('/',(req,res)=>{
+    res.send('hello world , running backend!');
+})
+
 app.post('/detectspam', async (req, res) => {
     const { text } = req.body;
 
