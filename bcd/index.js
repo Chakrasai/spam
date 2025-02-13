@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); 
+app.use(cors({ credentials: true, origin: 'https://spam-frontend.onrender.com' })); 
 app.use(express.json());
 
 const flaskapi = 'https://spam-deployment.onrender.com/detectspam';
