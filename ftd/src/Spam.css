@@ -1,43 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container Styling */
 .spam-detector-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Header */
+.header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 12px;
+  width: 100%;
+  color: white;
+  animation: slideIn 1s ease-out;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Text Input */
+.text-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.text-input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+/* Detect Button */
+.detect-button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  background: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.detect-button:hover {
+  background: #ffdd44;
+  transform: scale(1.05);
+}
+
+.detect-button:active {
+  transform: scale(0.95);
+}
+
+/* Result Animation */
+.result-container {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .header {
-    width: 50%;
-    padding: 15px;
-    text-align: center;
-    background-color: lightgray;
-    border: 2px solid black;
-    border-radius: 20px;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .input-area {
-    display: flex;
-    align-items: center;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
   }
-  
-  .text-input {
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin-right: 10px;
-    width: 60%;
-    box-sizing: border-box; /* To prevent width from increasing due to padding */
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .detect-button {
-    padding: 10px 15px;
-    background-color: lightgray;
-    border: 2px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .detect-button:hover{
-    background-color: gray;
-  }
+}
